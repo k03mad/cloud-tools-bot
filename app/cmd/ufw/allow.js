@@ -14,6 +14,6 @@ module.exports = async arg => {
         logs.push(await shell.run(`sudo ufw allow ${arg}`));
     }
 
-    logs.push(await shell.run('sudo ufw status'));
+    logs.push(await shell.run('sudo ufw status verbose'));
     return logs;
 };
