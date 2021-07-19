@@ -6,6 +6,7 @@ const {shell, repo} = require('@k03mad/utils');
 const repoUpdate = [
     'cloud-tools-bot',
     'cloud-tools-cron',
+    'magnet-co-parser',
 ];
 
 /** @returns {Promise} */
