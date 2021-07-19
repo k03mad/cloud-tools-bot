@@ -1,6 +1,6 @@
 'use strict';
 
-const {shell} = require('@k03mad/utils');
+const {shell, promise} = require('@k03mad/utils');
 
 /**
  * @param {string} arg
@@ -14,6 +14,8 @@ module.exports = async arg => {
         logs.push(await shell.run(`sudo ufw allow ${arg}`));
     }
 
+    await promise.delay();
     logs.push(await shell.run('sudo ufw status verbose'));
+
     return logs;
 };
