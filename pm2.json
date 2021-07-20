@@ -1,9 +1,4 @@
 {
   "name": "bot",
-  "script": "app/bot.js",
-
-  "exp_backoff_restart_delay": 1000,
-  "max_memory_restart": "300M",
-
-  "node_args": "--no-deprecation"
+  "script": "app/bot.js"
 }
