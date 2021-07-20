@@ -4,11 +4,12 @@ const {shell} = require('@k03mad/utils');
 
 /** @returns {Promise<string>} */
 module.exports = async () => {
-    const jails = ['sshd', 'grafana'];
+    const jailStatus = 'sudo fail2ban-client status';
+    const jails = ['grafana', 'sshd'];
 
     const data = [
-        await shell.run('sudo fail2ban-client status'),
-        ...await Promise.all(jails.map(jail => shell.run(`sudo fail2ban-client status ${jail}`))),
+        await shell.run(jailStatus),
+        ...await Promise.all(jails.map(jail => shell.run(`${jailStatus} ${jail}`))),
     ];
 
     return data.join('\n\n');
