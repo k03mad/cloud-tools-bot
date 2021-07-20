@@ -1,4 +1,6 @@
 {
   "name": "bot",
-  "script": "app/bot.js"
+  "script": "app/bot.js",
+
+  "node_args": "--no-deprecation"
 }
