@@ -10,6 +10,10 @@ const jailUnban = (jail, ip) => `sudo fail2ban-client set ${jail} unbanip ${ip}`
  * @returns {Promise<string>}
  * */
 module.exports = async ip => {
+    if (!ip) {
+        return 'Missing ip arg';
+    }
+
     const data = await Promise.all(jails.map(jail => shell.run(jailUnban(jail, ip))));
     return data.join('\n\n');
 };
