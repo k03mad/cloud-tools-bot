@@ -12,15 +12,15 @@
     "node": ">=16"
   },
   "dependencies": {
-    "@k03mad/utils": "14.5.3",
+    "@k03mad/utils": "15.0.8",
     "globby": "11.0.4",
-    "node-telegram-bot-api": "0.53.0",
+    "node-telegram-bot-api": "0.54.0",
     "require-all": "3.0.0"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "8.2.2",
-    "eslint": "7.30.0",
-    "eslint-plugin-jsdoc": "35.4.2",
+    "eslint": "7.31.0",
+    "eslint-plugin-jsdoc": "36.0.2",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-sort-requires": "2.1.0",
