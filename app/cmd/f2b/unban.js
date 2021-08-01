@@ -14,6 +14,10 @@ module.exports = async ip => {
         return 'Missing ip arg';
     }
 
-    const data = await Promise.all(jails.map(jail => shell.run(jailUnban(jail, ip))));
+    const data = await Promise.all(jails.map(async jail => {
+        const log = await shell.run(jailUnban(jail, ip));
+        return `${jail}: ${log}`;
+    }));
+
     return data.join('\n\n');
 };
