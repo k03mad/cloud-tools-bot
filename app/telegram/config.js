@@ -6,7 +6,6 @@ const {print} = require('@k03mad/utils');
 const {telegram, cloud, cert} = require('../../env');
 
 if (cloud.is) {
-
     const options = {
         webHook: {
             port: telegram.port,

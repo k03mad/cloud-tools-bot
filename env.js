@@ -3,8 +3,8 @@
 module.exports = {
     telegram: {
         chat: Number(process.env.TELEGRAM_MY_CHAT),
-        token: process.env.TELEGRAM_CLOUD_TOKEN,
-        port: process.env.TELEGRAM_PORT,
+        token: process.env.TELEGRAM_CLOUD_BOT,
+        port: process.env.TELEGRAM_CLOUD_PORT,
     },
     cloud: {
         is: process.env.IS_CLOUD,
