@@ -12,10 +12,10 @@
     "node": ">=17"
   },
   "dependencies": {
+    "require-all": "3.0.0",
     "@k03mad/utils": "19.5.5",
     "globby": "11.0.4",
-    "node-telegram-bot-api": "0.18.0",
-    "require-all": "3.0.0"
+    "node-telegram-bot-api": "0.54.0"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "8.2.3",
