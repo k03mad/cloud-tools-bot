@@ -1,7 +1,7 @@
 'use strict';
 
-const globby = require('globby');
 const reply = require('../telegram/reply');
+const {globby} = require('fix-esm').require('globby');
 const {print} = require('@k03mad/utils');
 const {shell} = require('@k03mad/utils');
 
