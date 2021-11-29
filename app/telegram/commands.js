@@ -1,6 +1,6 @@
 'use strict';
 
-const globby = require('globby');
+const glob = require('fast-glob');
 const reply = require('../telegram/reply');
 const {print} = require('@k03mad/utils');
 const {shell} = require('@k03mad/utils');
@@ -12,7 +12,7 @@ const {shell} = require('@k03mad/utils');
  */
 const setBotCommandsList = async bot => {
     const [commands, bin] = await Promise.all([
-        globby('./app/cmd'),
+        glob('app/cmd/**'),
         shell.run('ls $(npm bin -g)'),
     ]);
 
