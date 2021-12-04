@@ -4,7 +4,7 @@ const {shell} = require('@k03mad/utils');
 
 /** @returns {Promise<string>} */
 module.exports = async () => {
-    const allApps = ['cron', 'alice'];
+    const allApps = ['cron'];
     const currentApps = ['bot'];
 
     for (const app of allApps) {
