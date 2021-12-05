@@ -1,7 +1,8 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const restart = require('../pm/restart');
-const {shell, repo} = require('@k03mad/utils');
+import restart from '../pm/restart.js';
+
+const {shell, repo} = utils;
 
 const repoUpdate = [
     'cloud-tools-bot',
@@ -10,7 +11,7 @@ const repoUpdate = [
 ];
 
 /** @returns {Promise} */
-module.exports = async () => {
+export default async () => {
     const logs = ['__ NPM __'];
 
     const outdated = await shell.run('npm -g outdated --parseable --depth=0', {returnOnErr: true});

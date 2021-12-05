@@ -1,7 +1,9 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {array, string, print} = require('@k03mad/utils');
-const {telegram} = require('../../env');
+import env from '../../env.js';
+
+const {telegram} = env;
+const {array, string, print} = utils;
 
 /**
  * Reply on command text
@@ -10,7 +12,7 @@ const {telegram} = require('../../env');
  * @param {Function} cmd prepare answer with function
  * @param {string} args custom args
  */
-module.exports = (bot, enteredText, cmd, args) => {
+export default (bot, enteredText, cmd, args) => {
     const MAX_MSG_LENGTH = 4096;
     const textRe = new RegExp(`^/${enteredText}(@[a-z_]+)? ?(.+)?`);
 

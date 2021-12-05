@@ -1,12 +1,12 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 const jails = ['grafana', 'sshd'];
 const jailStatus = (jail = '') => `sudo fail2ban-client status ${jail}`;
 
 /** @returns {Promise<string>} */
-module.exports = async () => {
+export default async () => {
     const data = [
         await shell.run(jailStatus()),
         ...await Promise.all(jails.map(jail => shell.run(jailStatus(jail)))),

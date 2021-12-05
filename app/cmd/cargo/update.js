@@ -1,10 +1,9 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 /** @returns {Promise<string>} */
-module.exports = () => shell.run([
+export default () => shell.run([
     'rustup update',
     'cargo install-update -a',
 ]);
-

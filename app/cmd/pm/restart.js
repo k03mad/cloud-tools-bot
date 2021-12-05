@@ -1,9 +1,9 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 /** @returns {Promise<string>} */
-module.exports = async () => {
+export default async () => {
     const allApps = ['cron'];
     const currentApps = ['bot'];
 

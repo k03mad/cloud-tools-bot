@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports = {
+export default {
     telegram: {
         chat: Number(process.env.TELEGRAM_MY_CHAT),
         token: process.env.TELEGRAM_CLOUD_BOT,

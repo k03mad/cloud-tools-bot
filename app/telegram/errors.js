@@ -1,11 +1,11 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {print} = require('@k03mad/utils');
+const {print} = utils;
 
 const MIN_ERRORS = 30;
 
 /** @param {object} bot */
-module.exports = bot => {
+export default bot => {
     let pollingErrors = 0;
 
     bot.on('polling_error', err => {

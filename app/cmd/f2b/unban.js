@@ -1,6 +1,6 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 const jails = ['grafana', 'sshd'];
 const jailUnban = (jail, ip) => `sudo fail2ban-client set ${jail} unbanip ${ip}`;
@@ -9,7 +9,7 @@ const jailUnban = (jail, ip) => `sudo fail2ban-client set ${jail} unbanip ${ip}`
  * @param {string} ip
  * @returns {Promise<string>}
  * */
-module.exports = async ip => {
+export default async ip => {
     if (!ip) {
         return 'Missing ip arg';
     }

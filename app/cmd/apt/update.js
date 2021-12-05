@@ -1,6 +1,6 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 const aptUpdate = [
     'update',
@@ -10,7 +10,7 @@ const aptUpdate = [
 ];
 
 /** @returns {Promise} */
-module.exports = async () => {
+export default async () => {
     const logs = ['__ APT __'];
 
     for (const apt of aptUpdate) {

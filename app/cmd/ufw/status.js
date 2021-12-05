@@ -1,6 +1,6 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 /** @returns {Promise<string>} */
-module.exports = () => shell.run('sudo ufw status numbered');
+export default () => shell.run('sudo ufw status numbered');

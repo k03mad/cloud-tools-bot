@@ -1,12 +1,12 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 /**
  * @param {string|number} num
  * @returns {Promise<string>}
  */
-module.exports = num => {
+export default num => {
     if (!num) {
         return 'Missing number arg';
     }

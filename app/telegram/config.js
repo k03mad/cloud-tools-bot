@@ -1,9 +1,13 @@
-'use strict';
+import utils from '@k03mad/utils';
+import path from 'node:path';
+import TelegramBot from 'node-telegram-bot-api';
 
-const path = require('path');
-const TelegramBot = require('node-telegram-bot-api');
-const {print} = require('@k03mad/utils');
-const {telegram, cloud, cert} = require('../../env');
+import env from '../../env.js';
+
+const {telegram, cloud, cert} = env;
+const {print} = utils;
+
+let config;
 
 if (cloud.is) {
     const bot = new TelegramBot(telegram.token, {
@@ -21,7 +25,9 @@ if (cloud.is) {
             exit: true,
         }));
 
-    module.exports = bot;
+    config = bot;
 } else {
-    module.exports = new TelegramBot(telegram.token, {polling: true});
+    config = new TelegramBot(telegram.token, {polling: true});
 }
+
+export default config;

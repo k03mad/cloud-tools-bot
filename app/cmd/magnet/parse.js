@@ -1,6 +1,6 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {repo} = require('@k03mad/utils');
+const {repo} = utils;
 
 /** @returns {Promise} */
-module.exports = () => repo.run('magnet-co-parser', 'parse');
+export default () => repo.run('magnet-co-parser', 'parse');

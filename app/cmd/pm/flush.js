@@ -1,6 +1,6 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 /** @returns {Promise} */
-module.exports = () => shell.run('pm2 flush');
+export default () => shell.run('pm2 flush');

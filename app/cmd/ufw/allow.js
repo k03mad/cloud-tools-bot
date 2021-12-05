@@ -1,12 +1,12 @@
-'use strict';
+import utils from '@k03mad/utils';
 
-const {shell} = require('@k03mad/utils');
+const {shell} = utils;
 
 /**
  * @param {string} allow
  * @returns {Promise<string>}
  */
-module.exports = allow => {
+export default allow => {
     if (!allow) {
         return 'Missing allow arg';
     }

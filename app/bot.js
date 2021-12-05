@@ -1,14 +1,11 @@
-'use strict';
-
-const all = require('require-all')(`${__dirname}/cmd`);
-const bot = require('./telegram/config');
-const errorsHandler = require('./telegram/errors');
-const reply = require('./telegram/reply');
-const {setBotCommandsList} = require('./telegram/commands');
+import * as cmds from './cmd/index.js';
+import setBotCommandsList from './telegram/commands.js';
+import bot from './telegram/config.js';
+import errorsHandler from './telegram/errors.js';
+import reply from './telegram/reply.js';
 
 errorsHandler(bot);
 setBotCommandsList(bot);
 
-Object.entries(all)
-    .forEach(([folder, cmds]) => Object.keys(cmds)
-        .forEach(cmd => reply(bot, `${folder}_${cmd}`, all[folder][cmd])));
+Object.entries(cmds)
+    .forEach(([name, func]) => reply(bot, name, func));

@@ -1,28 +1,30 @@
-'use strict';
+import utils from '@k03mad/utils';
+import {globby} from 'globby';
 
-const glob = require('fast-glob');
-const reply = require('../telegram/reply');
-const {print} = require('@k03mad/utils');
-const {shell} = require('@k03mad/utils');
+import reply from '../telegram/reply.js';
+
+const {print, shell} = utils;
 
 /**
  * Распарсить команды из списка и поставить их боту
  * @param {object} bot
  * @returns {Array}
  */
-const setBotCommandsList = async bot => {
+export default async bot => {
     const [commands, bin] = await Promise.all([
-        glob('app/cmd/**'),
+        globby('app/cmd'),
         shell.run('ls $(npm bin -g)'),
     ]);
 
-    const list = commands.map(elem => {
-        const splitted = elem.split('/');
-        const name = splitted.pop().replace('.js', '');
-        const type = splitted.pop();
+    const list = commands
+        .filter(elem => !elem.includes('cmd/index.js'))
+        .map(elem => {
+            const splitted = elem.split('/');
+            const name = splitted.pop().replace('.js', '');
+            const type = splitted.pop();
 
-        return {command: `${type}_${name}`, description: 'local'};
-    });
+            return {command: `${type}_${name}`, description: 'local'};
+        });
 
     bin.split(/\s+/).filter(Boolean).forEach(command => {
         if (
@@ -45,5 +47,3 @@ const setBotCommandsList = async bot => {
 
     return list;
 };
-
-module.exports = {setBotCommandsList};
