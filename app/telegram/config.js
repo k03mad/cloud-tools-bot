@@ -4,7 +4,7 @@ import TelegramBot from 'node-telegram-bot-api';
 
 import env from '../../env.js';
 
-const {telegram, cloud, cert} = env;
+const {cert, cloud, telegram} = env;
 const {print} = utils;
 
 let config;

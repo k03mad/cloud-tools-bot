@@ -3,7 +3,7 @@ import utils from '@k03mad/utils';
 import env from '../../env.js';
 
 const {telegram} = env;
-const {array, string, print} = utils;
+const {array, print, string} = utils;
 
 /**
  * Reply on command text
