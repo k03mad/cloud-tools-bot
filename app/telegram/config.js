@@ -1,4 +1,4 @@
-import utils from '@k03mad/utils';
+import utils from '@k03mad/util';
 import path from 'node:path';
 import TelegramBot from 'node-telegram-bot-api';
 
