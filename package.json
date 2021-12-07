@@ -13,7 +13,7 @@
     "node": ">=17"
   },
   "dependencies": {
-    "@k03mad/util": "0.0.8",
+    "@k03mad/util": "1.2.1",
     "globby": "12.0.2",
     "node-telegram-bot-api": "0.54.0"
   },
