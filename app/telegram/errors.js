@@ -1,6 +1,4 @@
-import utils from '@k03mad/util';
-
-const {print} = utils;
+import {print} from '@k03mad/util';
 
 const MIN_ERRORS = 30;
 

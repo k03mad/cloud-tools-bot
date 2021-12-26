@@ -1,6 +1,4 @@
-import utils from '@k03mad/util';
-
-const {shell} = utils;
+import {shell} from '@k03mad/util';
 
 /**
  * @param {string|number} num

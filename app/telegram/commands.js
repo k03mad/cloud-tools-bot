@@ -1,9 +1,7 @@
-import utils from '@k03mad/util';
+import {print, shell} from '@k03mad/util';
 import {globby} from 'globby';
 
 import reply from '../telegram/reply.js';
-
-const {print, shell} = utils;
 
 /**
  * Распарсить команды из списка и поставить их боту

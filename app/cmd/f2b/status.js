@@ -1,6 +1,4 @@
-import utils from '@k03mad/util';
-
-const {shell} = utils;
+import {shell} from '@k03mad/util';
 
 const jails = ['grafana', 'sshd'];
 const jailStatus = (jail = '') => `sudo fail2ban-client status ${jail}`;

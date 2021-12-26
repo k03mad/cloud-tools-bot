@@ -1,8 +1,6 @@
-import utils from '@k03mad/util';
+import {repo, shell} from '@k03mad/util';
 
 import restart from '../pm/restart.js';
-
-const {repo, shell} = utils;
 
 const repoUpdate = [
     'cloud-tools-bot',

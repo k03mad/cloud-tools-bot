@@ -1,9 +1,8 @@
-import utils from '@k03mad/util';
+import {array, print, string} from '@k03mad/util';
 
 import env from '../../env.js';
 
 const {telegram} = env;
-const {array, print, string} = utils;
 
 /**
  * Reply on command text

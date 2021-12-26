@@ -1,11 +1,10 @@
-import utils from '@k03mad/util';
+import {print} from '@k03mad/util';
 import path from 'node:path';
 import TelegramBot from 'node-telegram-bot-api';
 
 import env from '../../env.js';
 
 const {cert, cloud, telegram} = env;
-const {print} = utils;
 
 let config;
 
