@@ -16,7 +16,7 @@ export default async () => {
     const parsed = outdated
         .split(/\s+/)
         .map(elem => elem.split(':')[3])
-        .filter(Boolean);
+        .filter(elem => Boolean(elem) && !elem.startsWith('npm@'));
 
     if (parsed.length > 0) {
 
