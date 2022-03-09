@@ -5,7 +5,6 @@ import restart from '../pm/restart.js';
 const repoUpdate = [
     'cloud-tools-bot',
     'cloud-tools-cron',
-    'magnet-co-parser',
 ];
 
 /** @returns {Promise} */
@@ -17,7 +16,7 @@ export default async () => {
     const parsed = outdated
         .split(/\s+/)
         .map(elem => elem.split(':')[3])
-        .filter(elem => Boolean(elem) && !elem.startsWith('npm@'));
+        .filter(elem => Boolean(elem));
 
     if (parsed.length > 0) {
 
