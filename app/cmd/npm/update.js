@@ -17,7 +17,7 @@ export default async () => {
     const parsed = outdated
         .split(/\s+/)
         .map(elem => elem.split(':')[3])
-        .filter(elem => Boolean(elem));
+        .filter(Boolean);
 
     if (parsed.length > 0) {
 
