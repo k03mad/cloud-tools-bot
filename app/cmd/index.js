@@ -5,7 +5,6 @@ export {default as f2b_status} from './f2b/status.js';
 export {default as f2b_unban} from './f2b/unban.js';
 export {default as magnet_parse} from './magnet/parse.js';
 export {default as npm_update} from './npm/update.js';
-export {default as pm_flush} from './pm/flush.js';
 export {default as pm_log} from './pm/log.js';
 export {default as pm_restart} from './pm/restart.js';
 export {default as system_reboot} from './system/reboot.js';
