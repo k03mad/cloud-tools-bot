@@ -13,15 +13,15 @@
     "node": ">=17"
   },
   "dependencies": {
-    "@k03mad/util": "4.8.1",
+    "@k03mad/util": "5.2.1",
     "globby": "13.1.1",
-    "node-telegram-bot-api": "0.56.0"
+    "node-telegram-bot-api": "0.57.0"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "11.0.3",
-    "eslint": "8.12.0",
-    "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jsdoc": "38.1.4",
+    "eslint": "8.14.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsdoc": "39.2.9",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "eslint-plugin-sort-destructure-keys": "1.4.0",
