@@ -1,17 +1,20 @@
 import {shell} from '@k03mad/util';
+import fs from 'node:fs/promises';
+
+const restartString = app => `pm2 restart ${app} --update-env`;
 
 /** @returns {Promise<string>} */
 export default async () => {
-    const allApps = ['cron'];
-    const currentApps = ['bot'];
+    const appsToRestart = ['cron'];
 
-    for (const app of allApps) {
-        await shell.run(`pm2 restart ${app} --update-env`);
+    const pm2File = await fs.readFile('./pm2.json');
+    const currentProcName = JSON.parse(pm2File).name;
+
+    for (const app of appsToRestart) {
+        await shell.run(restartString(app));
     }
 
-    for (const app of currentApps) {
-        shell.run(`sleep 5 && pm2 restart ${app} --update-env`);
-    }
+    shell.run(`sleep 5 && ${restartString(currentProcName)}`);
 
-    return `restarting apps: ${[...allApps, ...currentApps].join(', ')}...`;
+    return `restarting apps: ${[...appsToRestart, currentProcName].join(', ')}...`;
 };

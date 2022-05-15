@@ -11,4 +11,5 @@ export default {
     cert: {
         path: process.env.CERT_PATH,
     },
+    home: process.env.HOME,
 };

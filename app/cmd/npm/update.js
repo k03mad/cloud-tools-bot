@@ -2,14 +2,14 @@ import {repo, shell} from '@k03mad/util';
 
 import restart from '../pm/restart.js';
 
-const repoUpdate = [
-    'cloud-tools-bot',
-    'cloud-tools-cron',
-];
-
 /** @returns {Promise} */
 export default async () => {
-    const logs = ['__ NPM __'];
+    const repoUpdate = [
+        'cloud-tools-bot',
+        'cloud-tools-cron',
+    ];
+
+    const logs = [];
 
     const outdated = await shell.run('npm -g outdated --parseable --depth=0', {returnOnErr: true});
 
@@ -19,6 +19,7 @@ export default async () => {
         .filter(Boolean);
 
     if (parsed.length > 0) {
+        logs.push('__ NPM GLOBAL __');
 
         for (const pkg of parsed) {
             let output;
@@ -37,7 +38,7 @@ export default async () => {
 
     }
 
-    logs.push('__ REPO __');
+    logs.push('__ REPOSITORIES __');
 
     for (const app of repoUpdate) {
         logs.push(
