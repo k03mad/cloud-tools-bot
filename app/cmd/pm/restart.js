@@ -1,12 +1,12 @@
 import {shell} from '@k03mad/util';
 import fs from 'node:fs/promises';
 
+const appsToRestart = ['cron'];
+
 const restartString = app => `pm2 restart ${app} --update-env`;
 
 /** @returns {Promise<string>} */
 export default async () => {
-    const appsToRestart = ['cron'];
-
     const pm2File = await fs.readFile('./pm2.json');
     const currentProcName = JSON.parse(pm2File).name;
 

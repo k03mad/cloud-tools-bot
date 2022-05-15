@@ -2,13 +2,13 @@ import {repo, shell} from '@k03mad/util';
 
 import restart from '../pm/restart.js';
 
+const repoUpdate = [
+    'cloud-tools-bot',
+    'cloud-tools-cron',
+];
+
 /** @returns {Promise} */
 export default async () => {
-    const repoUpdate = [
-        'cloud-tools-bot',
-        'cloud-tools-cron',
-    ];
-
     const logs = [];
 
     const outdated = await shell.run('npm -g outdated --parseable --depth=0', {returnOnErr: true});
